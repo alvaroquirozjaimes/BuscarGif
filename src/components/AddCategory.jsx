@@ -1,40 +1,36 @@
-import { useState } from "react"
+import { useState } from "react";
 
+// Componente que permite al usuario escribir una categoría y enviarla al componente padre
 export const AddCategory = ({ onNewCategory }) => {
+
   // Hook useState para manejar el valor actual del input
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
-  // Función que se ejecuta cada vez que cambia el valor del input
+  // Se ejecuta cada vez que cambia el valor del input (cuando el usuario escribe)
   const onInputChange = ({ target }) => {
-    // Se actualiza el estado con el nuevo valor del input
-    setInputValue(target.value)
-  }
+    setInputValue(target.value); // Actualiza el estado con el valor del input
+  };
 
-  // Función que se ejecuta al enviar el formulario (al presionar Enter, por ejemplo)
+  // Se ejecuta cuando se envía el formulario (por ejemplo, al presionar Enter)
   const onSubmit = (event) => {
-    event.preventDefault() // Evita que la página se recargue al enviar el formulario
+    event.preventDefault(); // Previene el comportamiento por defecto del formulario
 
-    const normalizedValue = inputValue.trim().toLowerCase()
-    if (normalizedValue.length <= 1) return
-    onNewCategory(normalizedValue)
+    const normalizedValue = inputValue.trim().toLowerCase(); // Normaliza la entrada (sin espacios ni mayúsculas)
 
-    // Si el valor ingresado tiene 1 caracter o menos, no se hace nada
-    if (inputValue.trim().length <= 1) return
+    if (normalizedValue.length <= 1) return; // Si tiene 1 o menos caracteres, no hace nada
 
-    // Limpia el input una vez enviado
-    setInputValue("")
-
-    // setCategories( categories => [ inputValue, ...categories ]);
-
-    // Llama a la función que viene desde el componente padre, pasando el valor nuevo
-    onNewCategory(inputValue.trim())
-  }
+    onNewCategory(normalizedValue); // Llama a la función del componente padre con la categoría nueva
+    setInputValue("");              // Limpia el campo de texto después de enviarlo
+  };
 
   return (
     <form onSubmit={onSubmit} aria-label="Formulario de búsqueda de gifs">
+      {/* Etiqueta para accesibilidad, oculta visualmente */}
       <label htmlFor="searchInput" style={{ display: "none" }}>
         Buscar gifs
       </label>
+
+      {/* Campo de entrada de texto controlado */}
       <input
         id="searchInput"
         type="text"
@@ -43,5 +39,5 @@ export const AddCategory = ({ onNewCategory }) => {
         onChange={onInputChange}
       />
     </form>
-  )
-}
+  );
+};

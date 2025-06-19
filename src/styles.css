@@ -1,4 +1,4 @@
-/* Estilo base */
+/* ========== ESTILOS BASE ========== */
 * {
   box-sizing: border-box;
   font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* Título principal */
+/* ========== TITULARES ========== */
 h1 {
   text-align: center;
   font-size: 3rem;
@@ -21,7 +21,6 @@ h1 {
   color: #5e2ca5;
 }
 
-/* Subtítulos */
 h2 {
   font-size: 1.5rem;
   text-align: center;
@@ -36,7 +35,7 @@ h3 {
   color: #5e2ca5;
 }
 
-/* Formulario de búsqueda */
+/* ========== FORMULARIO DE BÚSQUEDA ========== */
 form {
   display: flex;
   justify-content: center;
@@ -61,7 +60,7 @@ input:focus {
   outline: none;
 }
 
-/* Contenedor de tarjetas */
+/* ========== GRID DE TARJETAS ========== */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -69,13 +68,14 @@ input:focus {
   padding: 0 1rem;
 }
 
-/* Tarjeta individual */
+/* ========== TARJETA DE GIF ========== */
 .card {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.4s ease-in;
 }
 
 .card:hover {
@@ -97,7 +97,19 @@ input:focus {
   color: #444;
 }
 
+/* ========== ANIMACIONES ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
+/* ========== LOADER (CARGANDO...) ========== */
 .loader-container {
   display: flex;
   justify-content: center;
@@ -112,13 +124,14 @@ input:focus {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-
+/* ========== BOTÓN LIMPIAR CATEGORÍAS ========== */
 .clear-button {
   display: block;
   margin: 0 auto 2rem;
@@ -131,28 +144,12 @@ input:focus {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .clear-button:hover {
   background-color: #7b42f6;
 }
 
-
-.card {
-  /* ...lo que ya tenías */
-  animation: fadeIn 0.4s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-
+/* ========== BOTONES DE PÁGINA (PAGINACIÓN) ========== */
 .pagination-buttons {
   display: flex;
   justify-content: center;
@@ -172,6 +169,10 @@ input:focus {
   transition: background-color 0.3s ease;
 }
 
+.pagination-buttons button:hover:not(:disabled) {
+  background-color: #7b42f6;
+}
+
 .pagination-buttons button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -180,19 +181,4 @@ input:focus {
 .pagination-buttons span {
   font-weight: bold;
   color: #5e2ca5;
-}
-
-
-.card {
-  animation: fadeIn 0.4s ease-in;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
