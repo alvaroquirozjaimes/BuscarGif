@@ -1,0 +1,198 @@
+/* Estilo base */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f8;
+  padding: 2rem;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #5e2ca5;
+}
+
+/* Subtítulos */
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #5e2ca5;
+}
+
+/* Formulario de búsqueda */
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+input {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid #5e2ca5;
+  color: #333;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #7b42f6;
+  box-shadow: 0 0 5px rgba(123, 66, 246, 0.3);
+  outline: none;
+}
+
+/* Contenedor de tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Tarjeta individual */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card p {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #cfc8e6;
+  border-top: 5px solid #5e2ca5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.clear-button {
+  display: block;
+  margin: 0 auto 2rem;
+  background-color: #5e2ca5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.clear-button:hover {
+  background-color: #7b42f6;
+}
+
+
+.card {
+  /* ...lo que ya tenías */
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pagination-buttons button {
+  background-color: #5e2ca5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-buttons span {
+  font-weight: bold;
+  color: #5e2ca5;
+}
+
+
+.card {
+  animation: fadeIn 0.4s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
